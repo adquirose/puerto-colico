@@ -1,0 +1,120 @@
+/*--------------------------------
+
+nucleo-icons Web Font - built using nucleoapp.com
+License - nucleoapp.com/license/
+
+-------------------------------- */
+@font-face {
+  font-family: 'nucleo-icons';
+  src: url('~assets/fonts/nucleo-icons.eot');
+  src: url('~assets/fonts/nucleo-icons.eot') format('embedded-opentype'), url('~assets/fonts/nucleo-icons.woff2') format('woff2'), url('~assets/fonts/nucleo-icons.woff') format('woff'), url('~assets/fonts/nucleo-icons.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* base class */
+.icon {
+  display: inline-block;
+  font: normal normal normal 1em/1 'Nucleo';
+  color: inherit;
+  flex-shrink: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* size examples - relative units */
+.icon-sm {
+  font-size: 0.8em;
+}
+
+.icon-lg {
+  font-size: 1.2em;
+}
+
+/* size examples - absolute units */
+.icon-16 {
+  font-size: 16px;
+}
+
+.icon-32 {
+  font-size: 32px;
+}
+
+/* rotate the icon infinitely */
+.icon-is-spinning {
+  animation: icon-spin 1s infinite linear;
+}
+
+@keyframes icon-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* transform */
+.icon-rotate-90  {
+	transform: rotate(90deg);
+}
+
+.icon-rotate-180 {
+	transform: rotate(180deg);
+}
+
+.icon-rotate-270 {
+	transform: rotate(270deg);
+}
+
+.icon-flip-y {
+	transform: scaleY(-1);
+}
+
+.icon-flip-x {
+	transform: scaleX(-1);
+}
+
+/* icons */
+$icons: (
+  'road-2': 'ea05',
+  'wifi': 'ea06',
+  'wifi-2': 'ea07',
+  'playground': 'ea09',
+  'car-parking': 'ea0a',
+  'property-agreement': 'ea0b',
+  'mobile-phone': 'ea0d',
+  'letter': 'ea0e',
+  'square-pin': 'ea0f',
+  'map-pin': 'ea10',
+  'beach-umbrella': 'ea11',
+  'rowing': 'ea13',
+  'boat-small-02': 'ea14',
+  'binoculars': 'ea15',
+  'telescope': 'ea16',
+  'mountain': 'ea17',
+  'logo-whatsapp': 'ea18',
+  'mobile-contact': 'ea19',
+  'beach-umbrella-2': 'ea1b',
+  'store': 'ea1c',
+  'cutlery': 'ea1d',
+  'skiing': 'ea1e',
+  'watering-plants': 'ea1f',
+  'rowing-1': 'ea20',
+  'email': 'ea21',
+  'research': 'ea22',
+  'drop': 'ea23',
+  'plug-2': 'ea24',
+  'road-2-1': 'ea25',
+  'tree-2': 'ea26',
+  'water-aerobics': 'ea27',
+);
+
+@function unicode($str) {
+  @return unquote("\"\\#{$str}\"");
+}
+
+@each $name, $code in $icons {
+  .icon-#{""+$name}::before {
+    content: unicode($code);
+  }
+}
